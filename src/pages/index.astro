@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="The Hallucinunciation">
+  <main>
+    <h1>Welcome to <span class="text-gradient">The Hallucinunciation</span></h1>
+    <p class="instructions">
+      Decades before his son would famously struggle with his fate in the garden
+      of Gethsemane, a minor character in the Bible was faced with impossible
+      circumstances imposed upon him by the Wholly Other, his life ruptured and
+      upended in an unwelcome way.
+    </p>
+    <ul role="list" class="link-card-grid">
+      <Card
+        title="What"
+        body="A short (under one hour) presentation of words and music for your consideration and entertainment."
+        href="/setlist"
+      />
+      <Card
+        title="When"
+        body="Thursday, December 21st, 2023. 7:30PM CT."
+        href="/Hallucinunciation.ics"
+      />
+      <Card
+        title="Where"
+        body="Episcopal Church of the Ascension. 8787 Greenville Ave, Dallas, TX 75243"
+        href="https://maps.app.goo.gl/bVZbXL64ERPBpfux7"
+      />
+      <Card
+        title="RSVP"
+        body="RSVP unnecessary but helpful if you do plan to attend."
+        href="https://lu.ma/dukjpd4w"
+      />
+    </ul>
+    <p style="font-size: small; text-align: right;">
+      Image: Dream of St Joseph, c. 1625-1630, by Gerard Seghers
+    </p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    max-width: calc(100% - 2rem);
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    position: relative;
+  }
+  main:before {
+    content: "";
+    background-image: url(/Dream_of_St_Joseph.jpg);
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+    z-index: -1;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    overflow-wrap: break-word;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
